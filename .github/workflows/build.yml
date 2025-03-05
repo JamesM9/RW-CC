@@ -2,51 +2,64 @@ name: Build
 
 on:
   push:
-    branches: [ '*' ]
+    branches: [ '*' ]  # Runs on all branches
   pull_request:
-    branches: [ master ]
-  workflow_dispatch:
+    branches: [ master ]  # Runs on pull requests to the master branch
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
-  # melodic:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: Native Melodic build
-  #       run: |
-  #         docker run --rm -v $(pwd):/root/catkin_ws/src/clover ros:melodic-ros-base /root/catkin_ws/src/clover/builder/standalone-install.sh
   noetic:
     runs-on: ubuntu-latest
-    container: ros:noetic-ros-base
+    container: ros:noetic-ros-base  # Uses the ROS Noetic Docker image
     defaults:
       run:
-        working-directory: catkin_ws
-        shell: bash
+        working-directory: catkin_ws  # Sets the working directory for all steps
+        shell: bash  # Uses bash as the default shell
     steps:
-    - uses: actions/checkout@v4
-      with:
-        path: catkin_ws/src/clover
-    - name: Install requirements
-      run: apt-get update && apt-get -y install python3-pip fakeroot python3-bloom debhelper dpkg-dev
-    - name: Install dependencies
-      run: rosdep update && rosdep install --from-paths src --ignore-src -y
-    - name: Install GeographicLib datasets
-      run: wget -qO- https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh | bash
-    - name: catkin_make
-      run: source /opt/ros/$ROS_DISTRO/setup.bash && catkin_make
-    - name: Run tests
-      run: source devel/setup.bash && catkin_make run_tests && catkin_test_results
-    - name: Build Debian packages
-      run: |
-        source devel/setup.bash
-        for file in `find . -name "package.xml"`; do
-          cd $(dirname ${file})
-          bloom-generate rosdebian --os-name ubuntu --os-version $(lsb_release -cs) --ros-distro $ROS_DISTRO  
-          fakeroot debian/rules binary
-          cd -
-        done
-    - uses: actions/upload-artifact@v3
-      with:
-        name: debian-packages
-        path: catkin_ws/src/clover/*.deb
-        retention-days: 1
+      # Step 1: Check out the repository
+      - uses: actions/checkout@v4
+        with:
+          path: catkin_ws/src/clover  # Places the repository in the correct path
+
+      # Step 2: Install system requirements
+      - name: Install requirements
+        run: |
+          apt-get update && apt-get -y install python3-pip fakeroot python3-bloom debhelper dpkg-dev
+
+      # Step 3: Install ROS dependencies
+      - name: Install dependencies
+        run: |
+          rosdep update && rosdep install --from-paths src --ignore-src -y
+
+      # Step 4: Install GeographicLib datasets
+      - name: Install GeographicLib datasets
+        run: |
+          wget -qO- https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh | bash
+
+      # Step 5: Build the workspace using catkin_make
+      - name: catkin_make
+        run: |
+          source /opt/ros/$ROS_DISTRO/setup.bash && catkin_make
+
+      # Step 6: Run tests
+      - name: Run tests
+        run: |
+          source devel/setup.bash && catkin_make run_tests && catkin_test_results
+
+      # Step 7: Build Debian packages
+      - name: Build Debian packages
+        run: |
+          source devel/setup.bash
+          for file in `find . -name "package.xml"`; do
+            cd $(dirname ${file})
+            bloom-generate rosdebian --os-name ubuntu --os-version $(lsb_release -cs) --ros-distro $ROS_DISTRO
+            fakeroot debian/rules binary
+            cd -
+          done
+
+      # Step 8: Upload Debian packages as artifacts
+      - uses: actions/upload-artifact@v3
+        with:
+          name: debian-packages  # Name of the artifact
+          path: catkin_ws/src/clover/*.deb  # Path to the Debian packages
+          retention-days: 1  # Number of days to retain the artifact
