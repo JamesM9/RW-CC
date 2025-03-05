@@ -2,9 +2,9 @@ name: RPi Image Build
 
 on:
   push:
-    branches: [ '*' ]  # Runs on all branches
+    branches: [ 'droid' ]  # Runs only on the droid branch
   pull_request:
-    branches: [ master ]  # Runs on pull requests to the master branch
+    branches: [ 'droid' ]  # Runs on PRs targeting the droid branch
   release:
     types: [ created ]  # Runs when a new release is created
   workflow_dispatch:  # Allows manual triggering of the workflow
@@ -14,24 +14,41 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Step 1: Check out the repository
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       # Step 2: Build the image using Docker
       - name: Build image
         run: |
-          docker run --privileged --rm -v /dev:/dev -v $(pwd):/builder/repo -e TRAVIS_TAG="${{ github.event.release.tag_name }}" sfalexrog/img-tool:qemu-update
+          docker run --privileged --rm \
+            -v /dev:/dev \
+            -v $(pwd):/builder/repo \
+            -e TRAVIS_TAG="${{ github.event.release.tag_name }}" \
+            sfalexrog/img-tool:qemu-update
 
       # Step 3: Compress the built image
       - name: Compress image
         run: |
-          cd images && sudo chmod -R 777 . && zip -9 $(echo *_*).zip *_* && ls -l . && unzip -l *_*.zip
+          cd images
+          sudo chmod -R 777 .
+          zip -9 compressed_image.zip *_*
+          ls -l .
+          unzip -l compressed_image.zip
 
-      # Step 4: Upload the compressed image to GitHub Releases (only on release events)
-      - name: Upload image
+      # Step 4: Upload the compressed image as an artifact
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RPi-Image  # Artifact name in GitHub Actions
+          path: images/compressed_image.zip
+          retention-days: 7  # Keep the artifact for 7 days
+
+      # Step 5: Upload the compressed image to GitHub Releases (only on release events)
+      - name: Upload to GitHub Releases
         uses: softprops/action-gh-release@v1
         if: ${{ github.event_name == 'release' }}  # Only run this step during a release
         with:
-          files: images/*_*.zip  # Path to the compressed image
+          files: images/compressed_image.zip  # Path to the compressed image
           prerelease: true  # Mark the release as a prerelease (change to `false` if not needed)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
