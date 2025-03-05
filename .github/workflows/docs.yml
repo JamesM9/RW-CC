@@ -2,10 +2,10 @@ name: Documentation
 
 on:
   push:
-    branches: [ '*' ]
+    branches: [ '*' ]  # Runs on all branches
   pull_request:
-    branches: [ '*' ]
-  workflow_dispatch:
+    branches: [ '*' ]  # Runs on pull requests to all branches
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 permissions:
   contents: read
@@ -20,29 +20,43 @@ jobs:
   docs:
     runs-on: ubuntu-22.04
     steps:
+      # Step 1: Check out the repository
       - uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
       - name: Use Node.js
         uses: actions/setup-node@v1
-        with: { node-version: '10' }
+        with:
+          node-version: '10'  # Replace with a newer version if needed
+
+      # Step 3: Install tools and dependencies
       - name: Setup tools
         run: |
           sudo sh -c "echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections"
           sudo apt-get update && sudo apt-get install -y calibre msttcorefonts
           builder/assets/install_gitbook.sh
-          npm install markdownlint-cli@0.28.1 -g # FIXME: https://github.com/DavidAnson/markdownlint/issues/435
+          npm install markdownlint-cli@0.28.1 -g  # FIXME: https://github.com/DavidAnson/markdownlint/issues/435
           npm install svgexport -g
           gitbook -V
           markdownlint -V
+
+      # Step 4: Run markdownlint
       - name: Run markdownlint
         run: markdownlint docs
+
+      # Step 5: Check assets
       - name: Check Assets
         run: |
           ./check_assets_size.py
           ./check_unused_assets.py
+
+      # Step 6: Build GitBook
       - name: Build GitBook
         run: |
-         gitbook install
-         gitbook build
+          gitbook install
+          gitbook build
+
+      # Step 7: Generate PDF
       - name: Generate PDF
         id: generate-pdf
         env:
@@ -58,14 +72,17 @@ jobs:
           rm _book/clover_en.pdf && mv _book/clover_en_compressed.pdf _book/clover_en.pdf
           ls -lah _book/clover*.pdf
           echo '::set-output name=GITBOOK_PDF_OK::1'
+
+      # Step 8: Download older PDFs (if PDF generation fails)
       - name: Download older PDFs
         if: ${{ !steps.generate-pdf.outputs.GITBOOK_PDF_OK }}
         run: |
           rm -f _book/clover*.pdf
           wget --no-verbose https://clover.coex.tech/clover_ru.pdf -P _book/
           wget --no-verbose https://clover.coex.tech/clover_en.pdf -P _book/
+
+      # Step 9: Upload artifact
       - name: Upload artifact
-        # if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: actions/upload-pages-artifact@v1
         with:
           path: _book
@@ -73,8 +90,8 @@ jobs:
   deploy-docs:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
     concurrency:
-        group: "pages"
-        cancel-in-progress: true
+      group: "pages"
+      cancel-in-progress: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
