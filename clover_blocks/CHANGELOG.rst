@@ -1,8 +1,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package clover_blocks
+Changelog for package droid_blocks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 0.21.1 (2020-11-17)
 -------------------
-* First release of clover_blocks package to ROS
+* First release of droid_blocks package to ROS
 * Contributors: Oleg Kalachev

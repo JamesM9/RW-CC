@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(clover_description)
+project(droid_description)
 
 find_package(catkin REQUIRED)
 

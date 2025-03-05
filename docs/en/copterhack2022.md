@@ -6,7 +6,7 @@ CopterHack 2022 is an international open-source projects competition on aerial r
 
 You can see the articles of the CopterHack 2021 finalist teams by the link [CopterHack 2021](copterhack2021.md).
 
-The proposed projects have to be open-source and be compatible with the Clover quadcopter platform. Teams will work on their projects throughout the competition, bringing them closer to the state of the finished product. Industry experts will assist the participants through lectures and regular feedback.
+The proposed projects have to be open-source and be compatible with the droid quadcopter platform. Teams will work on their projects throughout the competition, bringing them closer to the state of the finished product. Industry experts will assist the participants through lectures and regular feedback.
 
 Final of the CopterHack 2022 was held on April 23, 2022. The winner team was the team 🇧🇷 **Atena - Grupo SEMEAR**.
 
@@ -23,31 +23,31 @@ Final of the CopterHack 2022 was held on April 23, 2022. The winner team was the
 |Place|Team|Project|Points|
 |:-:|-|-|-|
 |1|🇧🇷 Atena - Grupo SEMEAR|[Swarm in Blocks](swarm_in_blocks.md)|21.6|
-|2|🇧🇾 FTL|[Advanced Clover 2](../ru/advanced_clover_simulator.html)|19.9|
-|3|🇷🇺 Clover Rescue Team|[Rescue Clover](clover-rescue-team.md)|17.7|
+|2|🇧🇾 FTL|[Advanced droid 2](../ru/advanced_droid_simulator.html)|19.9|
+|3|🇷🇺 droid Rescue Team|[Rescue droid](droid-rescue-team.md)|17.7|
 |4|🇷🇺 С305|[Система мониторинга воздуха](../ru/air_monitor.html)|17.3|
 |5|🇷🇺 Space clowns|[Copter For Space](../ru/c4s.html)|16.2|
 |6|🇷🇺 CopterCat|[CopterCat](copter_cat.md)|16.1|
 |7|🇷🇺 Stereo|[Neural obstacle avoidance](obstacle-avoidance-potential-fields.md)|15.85|
 |8|🇮🇳 DJS Phoenix|[Autonomous valet parking drone assistance](djs_phoenix_ikshana.md)|11.7|
-|✕|🇷🇺 R.S.|[Drone Hawk](https://github.com/slavaroot/clover/blob/droneHawkSecurity/docs/ru/drone-hawk-security.md)||
-|✕|🇲🇾 Moopt|[IoT Water Monitoring & Optimization](https://github.com/kafechew/clover/blob/master/docs/en/moopt-uav.md)||
-|✕|🇷🇺 Дрой Ронов|[Clover Swarm](https://github.com/stinger000/clever/blob/clover_swarm_request/docs/ru/clover-swarm.md)||
-|✕|🇷🇺 SPECTRE|[SPECTRE](https://github.com/alakhmenev/clover/blob/spectre_team/docs/ru/spectre_team.md)||
-|✕|🇰🇬 Alatoo University Team|[Облачная платформа для симулятора Клевера](https://github.com/pteacher/clover/blob/clover_simulator/docs/ru/clover-development-studio.md)||
-|✕|🇷🇺 Clevertron|[Clevertron](https://github.com/Daniel-drone/clover/blob/Clevertron-1/docs/ru/clevertron.md)||
-|✕|🇵🇱 Edgenoon|[Neural and vision-based landing method](https://github.com/edgenoon-ai/clover/blob/neural_vision_based_landing_method/docs/en/neural_vision_based_landing_method.md)||
-|✕|🇩🇪 Inondro|[Inondro Pix](https://github.com/Inondro/clover/blob/inondro-pix/docs/en/inondro_copterhack22_pix.md)||
-|✕|🇷🇺 SolidEye|[Разработка лидара без движущихся частей](https://github.com/feanorgg/clover/blob/solideye/docs/ru/solid_eye.md)||
-|✕|🇰🇬 AI_U_CLOVER|[AIU_CLOVER](https://github.com/zhibekm/clover/blob/zhibekm-patch-1/docs/en/aiu-article.md)||
-|✕|🇻🇳 Dragon&Tanker|[Dragon&Tanker](https://github.com/uml4/clover/blob/drone_observe_autonomous_car/docs/en/dragon_and_tanker_team.md)||
-|✕|🇷🇺 V-NAV|[Visual Navigation](https://github.com/v-nav/clover/blob/v-nav_article/docs/ru/v-nav.md)||
-|✕|🇷🇺 Джедаи 1581|[Ретранслятор на базе Клевера](https://github.com/JJNIK/clover/blob/patch-1/docs/ru/1581.md)||
-|✕|🇷🇺 Lucky flight|[Swarm of Improved Clover](https://github.com/bessiaka/clover/blob/Lucky-flight/docs/ru/lucky_flight.md)||
-|✕|🇺🇸 EnviroFleet|[EnviroFleet](https://github.com/gueyman/clover/blob/envirofleet/docs/en/enviro_fleet.md)||
-|✕|🇷🇺 Бизнес-гуси|[Drone Rover Climbing System](https://github.com/HexaHEX/clover/blob/CopterHack2022_Business_Geese-1/docs/ru/business_geese.md)||
-|✕|🇷🇺 fuall|[Доставка дронами](https://github.com/Silly4s/clover/blob/master/docs/ru/dostavka.md)||
-|✕|🇷🇺 Scout_Drone|[Создание поисково-спасательного беспилотного летательного аппарата](https://github.com/MustafaNatur/clover/blob/Scout_Drone.md/docs/ru/scout_drone.md)|&nbsp;|
+|✕|🇷🇺 R.S.|[Drone Hawk](https://github.com/slavaroot/droid/blob/droneHawkSecurity/docs/ru/drone-hawk-security.md)||
+|✕|🇲🇾 Moopt|[IoT Water Monitoring & Optimization](https://github.com/kafechew/droid/blob/master/docs/en/moopt-uav.md)||
+|✕|🇷🇺 Дрой Ронов|[droid Swarm](https://github.com/stinger000/clever/blob/droid_swarm_request/docs/ru/droid-swarm.md)||
+|✕|🇷🇺 SPECTRE|[SPECTRE](https://github.com/alakhmenev/droid/blob/spectre_team/docs/ru/spectre_team.md)||
+|✕|🇰🇬 Alatoo University Team|[Облачная платформа для симулятора Клевера](https://github.com/pteacher/droid/blob/droid_simulator/docs/ru/droid-development-studio.md)||
+|✕|🇷🇺 Clevertron|[Clevertron](https://github.com/Daniel-drone/droid/blob/Clevertron-1/docs/ru/clevertron.md)||
+|✕|🇵🇱 Edgenoon|[Neural and vision-based landing method](https://github.com/edgenoon-ai/droid/blob/neural_vision_based_landing_method/docs/en/neural_vision_based_landing_method.md)||
+|✕|🇩🇪 Inondro|[Inondro Pix](https://github.com/Inondro/droid/blob/inondro-pix/docs/en/inondro_copterhack22_pix.md)||
+|✕|🇷🇺 SolidEye|[Разработка лидара без движущихся частей](https://github.com/feanorgg/droid/blob/solideye/docs/ru/solid_eye.md)||
+|✕|🇰🇬 AI_U_droid|[AIU_droid](https://github.com/zhibekm/droid/blob/zhibekm-patch-1/docs/en/aiu-article.md)||
+|✕|🇻🇳 Dragon&Tanker|[Dragon&Tanker](https://github.com/uml4/droid/blob/drone_observe_autonomous_car/docs/en/dragon_and_tanker_team.md)||
+|✕|🇷🇺 V-NAV|[Visual Navigation](https://github.com/v-nav/droid/blob/v-nav_article/docs/ru/v-nav.md)||
+|✕|🇷🇺 Джедаи 1581|[Ретранслятор на базе Клевера](https://github.com/JJNIK/droid/blob/patch-1/docs/ru/1581.md)||
+|✕|🇷🇺 Lucky flight|[Swarm of Improved droid](https://github.com/bessiaka/droid/blob/Lucky-flight/docs/ru/lucky_flight.md)||
+|✕|🇺🇸 EnviroFleet|[EnviroFleet](https://github.com/gueyman/droid/blob/envirofleet/docs/en/enviro_fleet.md)||
+|✕|🇷🇺 Бизнес-гуси|[Drone Rover Climbing System](https://github.com/HexaHEX/droid/blob/CopterHack2022_Business_Geese-1/docs/ru/business_geese.md)||
+|✕|🇷🇺 fuall|[Доставка дронами](https://github.com/Silly4s/droid/blob/master/docs/ru/dostavka.md)||
+|✕|🇷🇺 Scout_Drone|[Создание поисково-спасательного беспилотного летательного аппарата](https://github.com/MustafaNatur/droid/blob/Scout_Drone.md/docs/ru/scout_drone.md)|&nbsp;|
 
 ✕ – teams which haven't qualified for the Final.
 
@@ -58,7 +58,7 @@ See all points by criteria in the [full table](https://docs.google.com/spreadshe
 Teams are welcome to dive into the development of the following company cases:
 
 1. Develop the Pixhawk FMUv6U flight controller board with the dimensions 55x40 mm and the compatibility of a Raspberry Pi CM 4 installation.
-2. Cloud platform for the [Clover simulator](https://clover.coex.tech/ru/simulation.html) similar as to/based on [ROS Development Studio](https://app.theconstructsim.com/).
+2. Cloud platform for the [droid simulator](https://droid.coex.tech/ru/simulation.html) similar as to/based on [ROS Development Studio](https://app.theconstructsim.com/).
 
 The list of cases may be expanded in future.
 
@@ -76,13 +76,13 @@ The qualifying and project development stages will be held in an online format. 
 General project requirements:
 
 1. Open-source.
-2. Compatibility with the Clover platform.
+2. Compatibility with the droid platform.
 
 Criteria for judging the jury at the final:
 
 1. Readiness and the article (max. 10 points): the degree of readiness of the project; an accessible and understandable description of the project in the article; a link to the code with comments, diagrams, drawings. It should be possible to reproduce the project and get the result according to the article.
 2. Amount of work done (max. 6 points): the amount of work done by the team in the framework of CopterHack 2022, its complexity, and the technical level.
-3. Usefulness for Clover (max. 6 points): the relevance to the Clover and PX4 platform application in practice, the potential level of demand from other Clover users.
+3. Usefulness for droid (max. 6 points): the relevance to the droid and PX4 platform application in practice, the potential level of demand from other droid users.
 4. Presentation at the final (max. 3 points): quality and entertainment of the final presentation; completeness of the project coverage; demonstration; answers to the jury's questions.
 
 ## Prize fund
@@ -103,9 +103,9 @@ The company case competition provides a prize of $2500 (USD) from COEX for furth
 
 > **Note** To apply, you should have an account on [GitHub](https://github.com).
 
-Prepare your application and send it as a Draft Pull Request to [Clover repository](https://github.com/CopterExpress/clover)
+Prepare your application and send it as a Draft Pull Request to [droid repository](https://github.com/CopterExpress/droid)
 
-1. Fork the Clover repository:
+1. Fork the droid repository:
 
     <img src="../assets/github_application/github-fork.png" alt="GitHub Fork">
 
@@ -143,9 +143,9 @@ Prepare your application and send it as a Draft Pull Request to [Clover reposito
    
    Describe how you see the project result.
    
-   ### Using Clover platform
+   ### Using droid platform
    
-   Describe how the Clover platform will be used in your project.
+   Describe how the droid platform will be used in your project.
    
    ### Additional information at the request of participants
    
@@ -160,7 +160,7 @@ Prepare your application and send it as a Draft Pull Request to [Clover reposito
 
 6. If necessary, place additional visual assets in the `docs/assets` folder and add them to your article.
 
-7. Send a Draft Pull Request from your branch to Clover:
+7. Send a Draft Pull Request from your branch to droid:
 
     <img src="../assets/github_application/github-pull-request-create.png" alt="GitHub Create Pull">
 
@@ -172,7 +172,7 @@ Prepare your application and send it as a Draft Pull Request to [Clover reposito
 
 As soon as the link to the application is added to this page in the section "Projects of the contest's participants", your team has become an official participant of the CopterHack 2022!
 
-Contest participants will be added to the special Telegram group, where one can send the project's updates and get feedback from the Jury. For all participating teams, COEX will provide a 50% discount on the Clover drone kit.
+Contest participants will be added to the special Telegram group, where one can send the project's updates and get feedback from the Jury. For all participating teams, COEX will provide a 50% discount on the droid drone kit.
 
 > **Info** There are no restrictions on the age, education, and number of people in the team.
 

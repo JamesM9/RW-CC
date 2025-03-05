@@ -100,7 +100,7 @@ function update() {
 
 var shownPrompts = new Set();
 
-new ROSLIB.Topic({ ros: ros.ros, name: ros.priv + 'prompt', messageType: 'clover_blocks/Prompt'}).subscribe(function(msg) {
+new ROSLIB.Topic({ ros: ros.ros, name: ros.priv + 'prompt', messageType: 'droid_blocks/Prompt'}).subscribe(function(msg) {
 	if (shownPrompts.has(msg.id)) return;
 	shownPrompts.add(msg.id);
 
@@ -211,7 +211,7 @@ function loadPrograms() {
 		updateChanged();
 	}, function(err) {
 		document.querySelector('.backend-fail').style.display = 'inline';
-		alert(`Error loading programs list.\n\nHave you enabled 'blocks' in clover.launch?`);
+		alert(`Error loading programs list.\n\nHave you enabled 'blocks' in droid.launch?`);
 		runButton.disabled = true;
 	})
 }

@@ -1,7 +1,7 @@
-# Information: https://clover.coex.tech/aruco
+# Information: https://droid.coex.tech/aruco
 
 import rospy
-from clover import srv
+from droid import srv
 from std_srvs.srv import Trigger
 
 rospy.init_node('flight')

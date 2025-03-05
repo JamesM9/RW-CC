@@ -40,9 +40,9 @@ section ul li:before {
 	margin-bottom: 0.85em;
 }
 
-.book.color-theme-2 img.big-clover {
+.book.color-theme-2 img.big-droid {
 	/* change image for black background */
-	content:url(assets/clover42-black.png);
+	content:url(assets/droid42-black.png);
 }
 
 footer {
@@ -57,7 +57,7 @@ footer img {
 	margin-right: .85em;
 }
 
-/*Assemble clover 4.2 article*/
+/*Assemble droid 4.2 article*/
 .type_table tr td {
 	padding: 14px 20px;
 }

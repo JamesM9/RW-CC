@@ -1,4 +1,4 @@
 <launch>
-    <!-- shortcut for running the simulation (`roslaunch clover simulator.launch`) -->
-    <include file="$(find clover_simulation)/launch/simulator.launch"/>
+    <!-- shortcut for running the simulation (`roslaunch droid simulator.launch`) -->
+    <include file="$(find droid_simulation)/launch/simulator.launch"/>
 </launch>

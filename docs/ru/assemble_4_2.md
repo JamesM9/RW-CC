@@ -1,6 +1,6 @@
 # Сборка Клевера 4.2
 
-Габаритный чертеж – [clover-4.2.pdf](https://github.com/CopterExpress/clover/raw/master/docs/assets/dimensional-drawing/clover-4.2.pdf).
+Габаритный чертеж – [droid-4.2.pdf](https://github.com/CopterExpress/droid/raw/master/docs/assets/dimensional-drawing/droid-4.2.pdf).
 
 ## Размер крепежа
 

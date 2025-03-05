@@ -1,7 +1,7 @@
-# Information: https://clover.coex.tech/en/simple_offboard.html#gettelemetry
+# Information: https://droid.coex.tech/en/simple_offboard.html#gettelemetry
 
 import rospy
-from clover import srv
+from droid import srv
 
 rospy.init_node('flight')
 

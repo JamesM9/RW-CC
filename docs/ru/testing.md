@@ -40,7 +40,7 @@
 
 ### Тесты selfcheck.py
 
-* **Корректная работа `rosrun clover selfcheck.py`, отсутствие варнингов, анализ вывода**
+* **Корректная работа `rosrun droid selfcheck.py`, отсутствие варнингов, анализ вывода**
 * **Выводит ориентацию камеры текстом**
 * **Делает `commander check`**
 * **Показывается, что используется наш форк прошивки и версию образа**
@@ -50,9 +50,9 @@
 ### Автоматизированные тесты
 
 * **Корректная работы автоматизированных тестов**:
-  * Тест автономного полета: `rosrun clover autotest_flight.py`
-  * Тест автономного полета по маркерам: `rosrun clover autotest_aruco.py`
-  * Тест LED-ленты: `rosrun clover autotest_led.py`
+  * Тест автономного полета: `rosrun droid autotest_flight.py`
+  * Тест автономного полета по маркерам: `rosrun droid autotest_aruco.py`
+  * Тест LED-ленты: `rosrun droid autotest_led.py`
 
 ### Тесты simple_offboard
 

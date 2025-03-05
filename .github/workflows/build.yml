@@ -19,7 +19,7 @@ jobs:
       # Step 1: Check out the repository
       - uses: actions/checkout@v4
         with:
-          path: catkin_ws/src/clover  # Places the repository in the correct path
+          path: catkin_ws/src/droid  # Places the repository in the correct path
 
       # Step 2: Install system requirements
       - name: Install requirements
@@ -61,5 +61,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: debian-packages  # Name of the artifact
-          path: catkin_ws/src/clover/*.deb  # Path to the Debian packages
+          path: catkin_ws/src/droid/*.deb  # Path to the Debian packages
           retention-days: 1  # Number of days to retain the artifact

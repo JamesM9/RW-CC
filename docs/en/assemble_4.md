@@ -1,6 +1,6 @@
-# Clover 4 assembly
+# droid 4 assembly
 
-<img src="../assets/assembling_clever4/clover_assembly.png" width=900 class="zoom center">
+<img src="../assets/assembling_clever4/droid_assembly.png" width=900 class="zoom center">
 
 ## Frame base assembly
 
