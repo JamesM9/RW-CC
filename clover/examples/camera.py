@@ -1,4 +1,4 @@
-# Information: https://droid.coex.tech/camera
+# Information: https://droid.droid.tech/camera
 
 # Example on basic working with the camera and image processing:
 

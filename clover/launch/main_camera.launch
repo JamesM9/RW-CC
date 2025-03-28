@@ -1,5 +1,5 @@
 <launch>
-    <!-- article about camera setup: https://droid.coex.tech/camera_setup -->
+    <!-- article about camera setup: https://droid.droid.tech/camera_setup -->
 
     <arg name="direction_z" default="down"/> <!-- direction the camera points: down, up -->
     <arg name="direction_y" default="backward"/> <!-- direction the camera cable points: backward, forward -->

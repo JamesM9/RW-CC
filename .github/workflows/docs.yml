@@ -62,8 +62,8 @@ jobs:
         if: ${{ !steps.generate-pdf.outputs.GITBOOK_PDF_OK }}
         run: |
           rm -f _book/droid*.pdf
-          wget --no-verbose https://droid.coex.tech/droid_ru.pdf -P _book/
-          wget --no-verbose https://droid.coex.tech/droid_en.pdf -P _book/
+          wget --no-verbose https://droid.droid.tech/droid_ru.pdf -P _book/
+          wget --no-verbose https://droid.droid.tech/droid_en.pdf -P _book/
       - name: Upload artifact
         # if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: actions/upload-pages-artifact@v1

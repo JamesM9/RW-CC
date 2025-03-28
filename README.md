@@ -1,12 +1,12 @@
 # 🍀: create autonomous drones easily
 
-<img src="docs/assets/42-main-margin.png" align="right" width="400px" alt="COEX  Drone">
+<img src="docs/assets/42-main-margin.png" align="right" width="400px" alt="droid  Drone">
 
  is an open source [ROS](https://www.ros.org)-based framework, providing user-friendly tools to control [PX4](https://px4.io)-powered drones.  is available as a ROS package, but is shipped mainly as a preconfigured image for Raspberry Pi. Once you've installed Raspberry Pi on your drone and flashed the image to its microSD card, taking the drone up in the air is a matter of minutes.
 
-COEX  Drone is an educational programmable drone kit, suited perfectly for running  software. The kit is shipped unassembled and includes Pixracer-compatible autopilot running PX4 firmware, Raspberry Pi 4 as a companion computer, a camera for computer vision navigation as well as additional sensors and peripheral devices. Batteries included.
+droid  Drone is an educational programmable drone kit, suited perfectly for running  software. The kit is shipped unassembled and includes Pixracer-compatible autopilot running PX4 firmware, Raspberry Pi 4 as a companion computer, a camera for computer vision navigation as well as additional sensors and peripheral devices. Batteries included.
 
-The main documentation is available at [https://.coex.tech](https://.coex.tech/). Official website: [coex.tech/](https://coex.tech/).
+The main documentation is available at [https://.droid.tech](https://.droid.tech/). Official website: [droid.tech/](https://droid.tech/).
 
 [__Support us on Kickstarter!__](https://www.kickstarter.com/projects/copterexpress/drone)
 
@@ -30,17 +30,17 @@ Image features:
 * Configured networking
 * OpenCV
 * [`mavros`](http://wiki.ros.org/mavros)
-* Periphery drivers for ROS ([GPIO](https://.coex.tech/en/gpio.html), [LED strip](https://.coex.tech/en/leds.html), etc)
+* Periphery drivers for ROS ([GPIO](https://.droid.tech/en/gpio.html), [LED strip](https://.droid.tech/en/leds.html), etc)
 * `aruco_pose` package for marker-assisted navigation
 * `` package for autonomous drone control
 
-API description for autonomous flights is available [on GitBook](https://.coex.tech/en/simple_offboard.html).
+API description for autonomous flights is available [on GitBook](https://.droid.tech/en/simple_offboard.html).
 
 For manual package installation and running see [`` package documentation](/README.md).
 
 ## Support
 
-[![Telegram Support Chat](https://img.shields.io/endpoint?label=Support%20Chat&url=https%3A%2F%2Ftelegram-badge-4mbpu8e0fit4.runkit.sh%2F%3Furl%3Dhttps%3A%2F%2Ft.me%2FCOEXHelpDesk)](https://t.me/COEXHelpdesk)
+[![Telegram Support Chat](https://img.shields.io/endpoint?label=Support%20Chat&url=https%3A%2F%2Ftelegram-badge-4mbpu8e0fit4.runkit.sh%2F%3Furl%3Dhttps%3A%2F%2Ft.me%2FdroidHelpDesk)](https://t.me/droidHelpdesk)
 
 ## License
 

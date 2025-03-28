@@ -1,4 +1,4 @@
-# Information: https://droid.coex.tech/programming
+# Information: https://droid.droid.tech/programming
 
 import rospy
 from droid import srv

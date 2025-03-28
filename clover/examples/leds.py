@@ -1,4 +1,4 @@
-# Information: https://droid.coex.tech/led
+# Information: https://droid.droid.tech/led
 
 import rospy
 from droid.srv import SetLEDEffect

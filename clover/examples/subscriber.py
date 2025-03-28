@@ -1,4 +1,4 @@
-# Information: https://droid.coex.tech/en/laser.html
+# Information: https://droid.droid.tech/en/laser.html
 
 import rospy
 from sensor_msgs.msg import Range

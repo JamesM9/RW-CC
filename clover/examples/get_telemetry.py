@@ -1,4 +1,4 @@
-# Information: https://droid.coex.tech/en/simple_offboard.html#gettelemetry
+# Information: https://droid.droid.tech/en/simple_offboard.html#gettelemetry
 
 import rospy
 from droid import srv

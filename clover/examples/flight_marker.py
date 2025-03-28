@@ -1,4 +1,4 @@
-# Information: https://droid.coex.tech/aruco
+# Information: https://droid.droid.tech/aruco
 
 import rospy
 from droid import srv

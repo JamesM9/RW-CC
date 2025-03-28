@@ -565,7 +565,7 @@ void _drawPlanarBoardImpl(Board *board, Size outSize, OutputArray img,
  * detected markers from several views of the Board. The process is similar to the chessboard
  * calibration in calibrateCamera(). The function returns the final re-projection error.
  */
-CV_EXPORTS_AS(calibrateCameraArucoExtended) double calibrateCameraAruco(
+CV_EXPORTS_AS(calibrateCameraArudroidtended) double calibrateCameraAruco(
     InputArrayOfArrays corners, InputArray ids, InputArray counter, const Ptr<Board> &board,
     Size imageSize, InputOutputArray cameraMatrix, InputOutputArray distCoeffs,
     OutputArrayOfArrays rvecs, OutputArrayOfArrays tvecs,

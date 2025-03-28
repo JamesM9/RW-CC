@@ -1,4 +1,4 @@
-# Information: https://droid.coex.tech/en/snippets.html#navigate_wait
+# Information: https://droid.droid.tech/en/snippets.html#navigate_wait
 
 import math
 import rospy

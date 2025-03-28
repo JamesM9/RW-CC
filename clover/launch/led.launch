@@ -7,7 +7,7 @@
 
     <arg name="simulator" default="false"/>
 
-    <!-- For additional help go to https://droid.coex.tech/led -->
+    <!-- For additional help go to https://droid.droid.tech/led -->
 
     <!-- ws281x led strip driver -->
     <node pkg="ws281x" name="led" type="ws281x_node" clear_params="true" output="screen" if="$(eval ws281x and not simulator)">

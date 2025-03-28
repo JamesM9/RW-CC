@@ -241,7 +241,7 @@ CV_EXPORTS_W void drawDetectedCornersCharuco(InputOutputArray image, InputArray 
  * receives a list of detected corners and its identifiers from several views of the Board.
  * The function returns the final re-projection error.
  */
-CV_EXPORTS_AS(calibrateCameraCharucoExtended) double calibrateCameraCharuco(
+CV_EXPORTS_AS(calibrateCameraCharudroidtended) double calibrateCameraCharuco(
     InputArrayOfArrays charucoCorners, InputArrayOfArrays charucoIds, const Ptr<CharucoBoard> &board,
     Size imageSize, InputOutputArray cameraMatrix, InputOutputArray distCoeffs,
     OutputArrayOfArrays rvecs, OutputArrayOfArrays tvecs,
