@@ -5,8 +5,8 @@ import threading
 import mavros_msgs.msg
 from mavros_msgs.srv import SetMode
 from geometry_msgs.msg import PoseStamped
-from clover import srv
-from clover.msg import State
+from droid import srv
+from droid.msg import State
 from std_srvs.srv import Trigger
 from math import nan, inf
 import tf2_ros
