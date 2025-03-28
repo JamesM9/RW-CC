@@ -56,17 +56,13 @@ The main manual modes are described below.
 
 1. Install the battery strap.
 
-    <img src="../assets/assembling_clever4_2/final_1.png" width=300 class="zoom border center">
-
 2. Set the propellers according to the [motor direction pattern](#prop_rotation).
-
-    <img src="../assets/assembling_clever4_2/final_3.png" width=300 class="zoom border center">
 
 3. Attach the buzzer and install the battery.
 
     <div class="image-group">
         <img src="../assets/flight/buzzer_acb.jpg" width=200 class="zoom border">
-        <img src="../assets/assembling_clever4_2/final_4.png" width=300 class="zoom border">
+        <img src="../assets/assembling_droid4_2/final_4.png" width=300 class="zoom border">
     </div>
 
 ### Setting the buzzer

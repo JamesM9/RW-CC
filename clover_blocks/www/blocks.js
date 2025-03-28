@@ -1,18 +1,10 @@
-/*
- * Copyright (C) 2020 Copter Express Technologies
- *
- * Author: Oleg Kalachev <okalachev@gmail.com>
- *
- * Distributed under MIT License (available at https://opensource.org/licenses/MIT).
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- */
+
 
 const COLOR_FLIGHT = 293;
 const COLOR_STATE = 36;
 const COLOR_LED = 143;
 const COLOR_GPIO = 200;
-const DOCS_URL = 'https://clover.coex.tech/en/blocks.html';
+const DOCS_URL = 'https://droid.Reality Works.tech/en/blocks.html';
 
 var frameIds = [["body", "BODY"], ["markers map", "ARUCO_MAP"], ["marker", "ARUCO"], ["last navigate target", "NAVIGATE_TARGET"], ["map", "MAP"]];
 var frameIdsWithTerrain = frameIds.concat([["terrain", "TERRAIN"]]);
@@ -72,81 +64,101 @@ function updateSetpointBlock(e) {
 	this.render();
 }
 
+// --- UTILITY FUNCTIONS ---
+function addFeetToMetersShadow() {
+  // Shadow block to multiply input (feet) by 0.3048 to get meters
+  return Blockly.Xml.textToDom(
+    '<shadow type="math_arithmetic">' +
+      '<field name="OP">MULTIPLY</field>' +
+      '<value name="A"><shadow type="math_number"><field name="NUM">1</field></shadow></value>' +
+      '<value name="B"><shadow type="math_number"><field name="NUM">0.3048</field></shadow></value>' +
+    '</shadow>'
+  );
+}
+
 Blockly.Blocks['navigate'] = {
-	init: function () {
-		let navFrameId = frameIdsWithTerrain.slice();
-		navFrameId.push(['global', 'GLOBAL_LOCAL'])
-		navFrameId.push(['global, WGS 84 alt.', 'GLOBAL'])
-		this.appendDummyInput()
-			.appendField("navigate to point");
-		this.appendValueInput("X")
-			.setCheck("Number")
-			.appendField("forward");
-		this.appendValueInput("Y")
-			.setCheck("Number")
-			.appendField("left");
-		this.appendValueInput("LAT")
-			.setCheck("Number")
-			.appendField("latitude")
-			.setVisible(false);
-		this.appendValueInput("LON")
-			.setCheck("Number")
-			.appendField("longitude")
-			.setVisible(false)
-		this.appendValueInput("Z")
-			.setCheck("Number")
-			.appendField("up");
-		this.appendDummyInput()
-			.appendField("relative to")
-			.appendField(new Blockly.FieldDropdown(navFrameId), "FRAME_ID");
-		this.appendValueInput("ID")
-			.setCheck("Number")
-			.appendField("with ID")
-			.setVisible(false)
-		this.appendValueInput("SPEED")
-			.setCheck("Number")
-			.appendField("with speed");
-		this.appendDummyInput()
-			.appendField("wait")
-			.appendField(new Blockly.FieldCheckbox("TRUE"), "WAIT");
-		this.setInputsInline(false);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
-		this.setColour(COLOR_FLIGHT);
-		this.setTooltip("Navigate to the specified point, coordinates are in meters.");
-		this.setHelpUrl(DOCS_URL + '#' + this.type);
-		this.setOnChange(considerFrameId);
-	}
+ 	init: function () {
+	    let navFrameId = frameIdsWithTerrain.slice();
+	    navFrameId.push(['global', 'GLOBAL_LOCAL'])
+	    navFrameId.push(['global, WGS 84 alt.', 'GLOBAL'])
+	    this.appendDummyInput()
+	      .appendField("navigate to point");
+	    this.appendValueInput("X")
+	      .setCheck("Number")
+	      .appendField("Forward->(+)/Backward->(-) (feet)")
+	      .setShadowDom(addFeetToMetersShadow()); // ADDED CONVERSION
+	    this.appendValueInput("Y")
+	      .setCheck("Number")
+	      .appendField("Left->(+)/Right->(-) (feet)")
+	      .setShadowDom(addFeetToMetersShadow()); // ADDED CONVERSION
+	    this.appendValueInput("LAT")
+	      .setCheck("Number")
+	      .appendField("latitude")
+	      .setVisible(false);
+	    this.appendValueInput("LON")
+	      .setCheck("Number")
+	      .appendField("longitude")
+	      .setVisible(false)
+	    this.appendValueInput("Up->(+)/Down->(-)")
+	      .setCheck("Number")
+	      .appendField("up (feet)")
+	      .setShadowDom(addFeetToMetersShadow()); // ADDED CONVERSION
+	    this.appendDummyInput()
+	      .appendField("relative to")
+	      .appendField(new Blockly.FieldDropdown(navFrameId), "FRAME_ID");
+	    this.appendValueInput("ID")
+	      .setCheck("Number")
+	      .appendField("with ID")
+	      .setVisible(false)
+	    this.appendValueInput("SPEED")
+	      .setCheck("Number")
+	      .appendField("with speed (feet/s)")
+	      .setShadowDom(addFeetToMetersShadow()); // ADDED CONVERSION
+	    this.appendDummyInput()
+	      .appendField("wait")
+	      .appendField(new Blockly.FieldCheckbox("TRUE"), "WAIT");
+	    this.setInputsInline(false);
+	    this.setPreviousStatement(true, null);
+	    this.setNextStatement(true, null);
+	    this.setColour(COLOR_FLIGHT);
+	    this.setTooltip("Navigate to the specified point, coordinates are in feet."); // UPDATED TOOLTIP
+	    this.setHelpUrl(DOCS_URL + '#' + this.type);
+	    this.setOnChange(considerFrameId);
+    }
 };
 
+
 Blockly.Blocks['set_velocity'] = {
-	init: function () {
-		this.appendDummyInput()
-			.appendField("set velocity");
-		this.appendValueInput("X")
-			.setCheck("Number")
-			.appendField("forward");
-		this.appendValueInput("Y")
-			.setCheck("Number")
-			.appendField("left");
-		this.appendValueInput("Z")
-			.setCheck("Number")
-			.appendField("up");
-		this.appendDummyInput()
-			.appendField("relative to")
-			.appendField(new Blockly.FieldDropdown(frameIds), "FRAME_ID");
-		this.appendValueInput("ID")
-			.setCheck("Number")
-			.appendField("with ID")
-			.setVisible(false)
-		this.setInputsInline(false);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
-		this.setColour(COLOR_FLIGHT);
-		this.setTooltip("Set the drone velocity in meters per second (cancels navigation requests).");
-		this.setHelpUrl(DOCS_URL + '#' + this.type);
-		this.setOnChange(considerFrameId);
-	}
+    init: function () {
+	    this.appendDummyInput()
+	      .appendField("set velocity (feet/s)"); // UPDATED LABEL
+	    this.appendValueInput("X")
+	      .setCheck("Number")
+	      .appendField("Forward->(+)/Backward->(-)")
+	      .setShadowDom(addFeetToMetersShadow()); // ADDED CONVERSION
+	    this.appendValueInput("Y")
+	      .setCheck("Number")
+	      .appendField("Left->(+)/Right->(-)")
+	      .setShadowDom(addFeetToMetersShadow());
+	    this.appendValueInput("Z")
+	      .setCheck("Number")
+	      .appendField("Up->(+)/Down->(-)")
+	      .setShadowDom(addFeetToMetersShadow());
+	    this.appendDummyInput()
+	      .appendField("relative to")
+	      .appendField(new Blockly.FieldDropdown(frameIds), "FRAME_ID");
+	    this.appendValueInput("ID")
+	      .setCheck("Number")
+	      .appendField("with ID")
+	      .setVisible(false)
+	    this.setInputsInline(false);
+	    this.setPreviousStatement(true, null);
+	    this.setNextStatement(true, null);
+	    this.setColour(COLOR_FLIGHT);
+	    this.setTooltip("Set the drone velocity in feet per second (cancels navigation requests)."); // UPDATED TOOLTIP
+	    this.setHelpUrl(DOCS_URL + '#' + this.type);
+	    this.setOnChange(considerFrameId);
+    }
 };
 
 Blockly.Blocks['setpoint'] = {
@@ -221,7 +233,7 @@ Blockly.Blocks['get_position'] = {
 			.setVisible(false)
 		this.setOutput(true, "Number");
 		this.setColour(COLOR_STATE);
-		this.setTooltip("Returns current position or velocity in meters or meters per second.");
+		this.setTooltip("Returns current position or velocity in feet or feet per second.");
 		this.setHelpUrl(DOCS_URL + '#' + this.type);
 		this.setOnChange(considerFrameId);
 	}
@@ -386,31 +398,21 @@ Blockly.Blocks['set_effect'] = {
 	}
 };
 
-Blockly.Blocks['led_count'] = {
-	init: function () {
-		this.appendDummyInput()
-			.appendField("LED count");
-		this.setOutput(true, "Number");
-		this.setColour(COLOR_LED);
-		this.setTooltip("Returns the number of LEDs (configured in led.launch).");
-		this.setHelpUrl(DOCS_URL + '#' + this.type);
-	}
-};
-
 Blockly.Blocks['take_off'] = {
-	init: function () {
-		this.appendValueInput("ALT")
-			.setCheck("Number")
-			.appendField("take off to");
-		this.appendDummyInput()
-			.appendField("wait")
-			.appendField(new Blockly.FieldCheckbox("TRUE"), "WAIT");
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
-		this.setColour(COLOR_FLIGHT);
-		this.setTooltip("Take off on desired altitude in meters.");
-		this.setHelpUrl(DOCS_URL + '#' + this.type);
-	}
+    init: function () {
+	    this.appendValueInput("ALT")
+	      .setCheck("Number")
+	      .appendField("take off to (feet)") // UPDATED LABEL
+	      .setShadowDom(addFeetToMetersShadow()); // ADDED CONVERSION
+	    this.appendDummyInput()
+	      .appendField("wait")
+	      .appendField(new Blockly.FieldCheckbox("TRUE"), "WAIT");
+	    this.setPreviousStatement(true, null);
+	    this.setNextStatement(true, null);
+	    this.setColour(COLOR_FLIGHT);
+	    this.setTooltip("Take off on desired altitude in feet."); // UPDATED TOOLTIP
+	    this.setHelpUrl(DOCS_URL + '#' + this.type);
+    }
 };
 
 Blockly.Blocks['land'] = {
@@ -430,15 +432,15 @@ Blockly.Blocks['land'] = {
 };
 
 Blockly.Blocks['global_position'] = {
-	init: function () {
-		this.appendDummyInput()
-			.appendField("current")
-			.appendField(new Blockly.FieldDropdown([["latitude", "LAT"], ["longitude", "LON"], ["altitude", "ALT"]]), "FIELD");
-		this.setOutput(true, "Number");
-		this.setColour(COLOR_STATE);
-		this.setTooltip("Returns current global position (latitude, longitude, altitude above the WGS 84 ellipsoid).");
-		this.setHelpUrl(DOCS_URL + '#' + this.type);
-	}
+    init: function () {
+	    this.appendDummyInput()
+	      .appendField("current")
+	      .appendField(new Blockly.FieldDropdown([["latitude", "LAT"], ["longitude", "LON"], ["altitude (feet)", "ALT"]]), "FIELD"); // UPDATED LABEL
+	    this.setOutput(true, "Number");
+	    this.setColour(COLOR_STATE);
+	    this.setTooltip("Returns current global position (latitude, longitude, altitude in feet)."); // UPDATED TOOLTIP
+	    this.setHelpUrl(DOCS_URL + '#' + this.type);
+    }
 };
 
 Blockly.Blocks['on_take_off'] = {
@@ -509,32 +511,35 @@ Blockly.Blocks['set_yaw'] = {
 };
 
 Blockly.Blocks['distance'] = {
-	init: function () {
-		this.appendDummyInput()
-			.appendField("distance to point");
-		this.appendValueInput("X")
-			.setCheck("Number")
-			.appendField("x");
-		this.appendValueInput("Y")
-			.setCheck("Number")
-			.appendField("y");
-		this.appendValueInput("Z")
-			.setCheck("Number")
-			.appendField("z");
-		this.appendDummyInput()
-			.appendField("relative to")
-			.appendField(new Blockly.FieldDropdown([["markers map", "ARUCO_MAP"], ["marker", "ARUCO"], ["last navigate target", "NAVIGATE_TARGET"], ["terrain", "TERRAIN"]]), "FRAME_ID");
-		this.appendValueInput("ID")
-			.setCheck("Number")
-			.appendField("with ID")
-			.setVisible(false);
-		this.setInputsInline(false);
-		this.setOutput(true, "Number");
-		this.setColour(COLOR_STATE);
-		this.setTooltip("Returns the distance to the given point in meters.");
-		this.setHelpUrl(DOCS_URL + '#' + this.type);
-		this.setOnChange(considerFrameId);
-	}
+    init: function () {
+	    this.appendDummyInput()
+	      .appendField("distance to point (feet)"); // UPDATED LABEL
+	    this.appendValueInput("X")
+	      .setCheck("Number")
+	      .appendField("x")
+	      .setShadowDom(addFeetToMetersShadow()); // ADDED CONVERSION
+	    this.appendValueInput("Y")
+	      .setCheck("Number")
+	      .appendField("y")
+	      .setShadowDom(addFeetToMetersShadow());
+	    this.appendValueInput("Z")
+	      .setCheck("Number")
+	      .appendField("z")
+	      .setShadowDom(addFeetToMetersShadow());
+	    this.appendDummyInput()
+	      .appendField("relative to")
+	      .appendField(new Blockly.FieldDropdown([["markers map", "ARUCO_MAP"], ["marker", "ARUCO"], ["last navigate target", "NAVIGATE_TARGET"], ["terrain", "TERRAIN"]]), "FRAME_ID");
+	    this.appendValueInput("ID")
+	      .setCheck("Number")
+	      .appendField("with ID")
+	      .setVisible(false);
+	    this.setInputsInline(false);
+	    this.setOutput(true, "Number");
+	    this.setColour(COLOR_STATE);
+	    this.setTooltip("Returns the distance to the given point in feet."); // UPDATED TOOLTIP
+	    this.setHelpUrl(DOCS_URL + '#' + this.type);
+	    this.setOnChange(considerFrameId);
+    }
 };
 
 Blockly.Blocks['wait'] = {

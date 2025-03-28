@@ -22,11 +22,11 @@ S.Bus is the preferred protocol for the receiver.
         <img src="../assets/flysky_a8s/04_remove_cable_pixracer.png" width=300 class="zoom border" alt="pixracer wire removal 2">
     </div>
 
-3. [COEX Pix only] Remove the green wire (or blue if the green one is not present) from the 4-pin connector:
+3. [Reality Works Pix only] Remove the green wire (or blue if the green one is not present) from the 4-pin connector:
 
     <div class="image-group">
-        <img src="../assets/flysky_a8s/05_remove_cable_coexpix.png" width=300 class="zoom border" alt="coexpix wire removal 1">
-        <img src="../assets/flysky_a8s/06_remove_cable_coexpix.png" width=300 class="zoom border" alt="coexpix wire removal 2">
+        <img src="../assets/flysky_a8s/05_remove_cable_Reality Workspix.png" width=300 class="zoom border" alt="Reality Workspix wire removal 1">
+        <img src="../assets/flysky_a8s/06_remove_cable_Reality Workspix.png" width=300 class="zoom border" alt="Reality Workspix wire removal 2">
     </div>
 
 4. Use side cutters to cut the Dupont connectors:
@@ -47,7 +47,7 @@ S.Bus is the preferred protocol for the receiver.
 7. Solder the following wires:
     * black wire from the receiver connector to the black wire from the flight controller connector;
     * red wire from the receiver connector to the red wire from the flight controller connector;
-    * white wire from the receiver connector to the white (if you're using Pixracer) or yellow (if you're using COEX Pix) wire from the flight controller connector:
+    * white wire from the receiver connector to the white (if you're using Pixracer) or yellow (if you're using Reality Works Pix) wire from the flight controller connector:
 
     <img src="../assets/flysky_a8s/11_solder_scheme.png" width=300 class="zoom border center" alt="wire soldering">
 
@@ -63,11 +63,11 @@ Connect your receiver to the RC IN port on your flight controller:
 
 <div class="image-group">
     <img src="../assets/flysky_a8s/14_pixracer_rcin.png" width=300 class="zoom border center" alt="pixracer connection">
-    <img src="../assets/flysky_a8s/14_coexpix_rcin.png" width=300 class="zoom border center" alt="coex pix connection">
+    <img src="../assets/flysky_a8s/14_Reality Workspix_rcin.png" width=300 class="zoom border center" alt="Reality Works pix connection">
 </div>
 
-> **Hint** Double check that you're using the RC IN port on the COEX Pix:
-<img src="../assets/coex_pix/coexpix-bottom.jpg" width=300 class="zoom border center" alt="coex pix pinout">
+> **Hint** Double check that you're using the RC IN port on the Reality Works Pix:
+<img src="../assets/Reality Works_pix/Reality Workspix-bottom.jpg" width=300 class="zoom border center" alt="Reality Works pix pinout">
 
 ## Binding your transmitter {#rc_bind}
 

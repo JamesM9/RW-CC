@@ -1,23 +1,23 @@
 Pixhawk / Pixracer firmware flashing
 ===
 
-Pixhawk, Pixracer or [COEX Pix](coex_pix.md) firmware may be flashed using QGroundControl or command line utilities.
+Pixhawk, Pixracer or [Reality Works Pix](Reality Works_pix.md) firmware may be flashed using QGroundControl or command line utilities.
 
-Modified firmware for Clover
+Modified firmware for droid
 ---
 
-It is advisable to use a specialized build of PX4 with the necessary fixes and better defaults for the Clover drone. Use the latest stable release in our [GitHub repository](https://github.com/CopterExpress/Firmware/releases) with the word `clover`, for example, `v1.8.2-clover.5`.
+It is advisable to use a specialized build of PX4 with the necessary fixes and better defaults for the droid drone. Use the latest stable release in our [GitHub repository](https://github.com/CopterExpress/Firmware/releases) with the word `droid`, for example, `v1.8.2-droid.5`.
 
 <div id="release" style="display:none">
 <p>Latest stable release: <strong><a id="download-latest-release"></a></strong>.</p>
 
 <ul>
-<li>Firmware for COEX Pix and Pixracer (<strong>Clover 4 / Clover 3</strong>) – <a id="firmware-pixracer" href=""><code>px4fmu-v4_default.px4</code></a>.</li>
-<li>Firmware for Pixhawk (<strong>Clover 2</strong>) – <a id="firmware-pixhawk" href=""><code>px4fmu-v2_lpe.px4</code></a>.</li>
+<li>Firmware for Reality Works Pix and Pixracer (<strong>droid 4 / droid 3</strong>) – <a id="firmware-pixracer" href=""><code>px4fmu-v4_default.px4</code></a>.</li>
+<li>Firmware for Pixhawk (<strong>droid 2</strong>) – <a id="firmware-pixhawk" href=""><code>px4fmu-v2_lpe.px4</code></a>.</li>
 </ul>
 </div>
 
-> **Warning** If you are using the firmware version older than *v1.10* (for example, `v1.8.2-clover.13`), then in order to avoid configuration errors, use [QGroundControl version *v4.2.0*](https://github.com/mavlink/qgroundcontrol/releases/tag/v4.2.0) (or older). See [detailed information](https://docs.px4.io/v1.11/en/config/battery.html#parameter-migration-notes) about changes in the firmware parameters that cause errors in newer versions of QGroundControl.
+> **Warning** If you are using the firmware version older than *v1.10* (for example, `v1.8.2-droid.13`), then in order to avoid configuration errors, use [QGroundControl version *v4.2.0*](https://github.com/mavlink/qgroundcontrol/releases/tag/v4.2.0) (or older). See [detailed information](https://docs.px4.io/v1.11/en/config/battery.html#parameter-migration-notes) about changes in the firmware parameters that cause errors in newer versions of QGroundControl.
 
 <script type="text/javascript">
     // get latest release from GitHub
@@ -27,8 +27,8 @@ It is advisable to use a specialized build of PX4 with the necessary fixes and b
         // look for stable release
         let stable;
         for (let release of data) {
-            let clover = (release.name.indexOf('clover') != -1) || (release.name.indexOf('clever') != -1);
-            if (clover && !release.prerelease && !release.draft) {
+            let droid = (release.name.indexOf('droid') != -1) || (release.name.indexOf('droid') != -1);
+            if (droid && !release.prerelease && !release.draft) {
                 stable = release;
                 break;
             }
@@ -62,8 +62,8 @@ Firmware variants
 
 The name of the firmware file contains information about the target flight controller and build variant. For example:
 
-* `px4fmu-v4_default.px4` — firmware for COEX Pix and Pixracer with EKF2 and LPE (**Clover 3** / **Clover 4**).
-* `px4fmu-v2_lpe.px4` — firmware for Pixhawk with LPE (**Clover 2**).
+* `px4fmu-v4_default.px4` — firmware for Reality Works Pix and Pixracer with EKF2 and LPE (**droid 3** / **droid 4**).
+* `px4fmu-v2_lpe.px4` — firmware for Pixhawk with LPE (**droid 2**).
 * `px4fmu-v2_default.px4` — firmware for Pixhawk with EKF2.
 * `px4fmu-v3_default.px4` — firmware for newer Pixhawk versions (rev. 3 chip, see Fig. + Bootloader v5) with EKF2 and LPE.
 

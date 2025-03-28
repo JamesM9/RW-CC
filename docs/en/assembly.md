@@ -1,36 +1,24 @@
-# Clover drone assembly
+# droid drone assembly
 
-This section contains articles describing the assembly of each version of Clover.
+This section contains articles describing the assembly of each version of droid.
 
 <table class=versions>
      <tr><th>Version</th><th>Image</th></tr>
      <tr>
           <td>
-               <a href="assemble_4_2.md">Clover&nbsp;4.2</a>
+               <a href="assemble_4_2.md">droid&nbsp;4.2</a>
                <div class=subversion>(<a href="assemble_4_2_ws.md">4.2&nbsp;WorldSkills</a>)</div>
           </td>
-          <td><a href="assemble_4_2.md"><img src="../assets/versions/clover_4_2.jpg" width=200></a></td>
-     </tr>
-     <tr>
-          <td><a href="assemble_4.md">Clover&nbsp;4</a></td>
-          <td><a href="assemble_4.md"><img src="../assets/versions/clover_4.jpg" width=200></a></td>
-     </tr>
-     <tr>
-          <td><a href="assemble_3.md">Clover&nbsp;3</a></td>
-          <td><a href="assemble_3.md"><img src="../assets/versions/clover_3.jpg" width=200></a></td>
-     </tr>
-     <tr>
-          <td><a href="assemble_2.md">Clover&nbsp;2</a></td>
-          <td><a href="assemble_2.md"><img src="../assets/versions/clover_2.jpg" width=200></a></td>
+          <td><a href="assemble_4_2.md"><img src="../assets/versions/droid_4_2.jpg" width=200></a></td>
      </tr>
 </table>
 
-Links to Clover's parts CAD-models are available in the "[CAD-models](models.md)" article.
+Links to droid's parts CAD-models are available in the "[CAD-models](models.md)" article.
 
 ## Determination of version
 
-Use serial number to determine the version of your Clover.
+Use serial number to determine the version of your droid.
 
-<img src="../assets/serial_n.png" title="Clover serial number" width=300>
+<img src="../assets/serial_n.png" title="droid serial number" width=300>
 
-In this case the number *420* indicates the Clover version **4.2**.
+In this case the number *420* indicates the droid version **4.2**.

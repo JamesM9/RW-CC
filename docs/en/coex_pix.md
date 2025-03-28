@@ -1,8 +1,8 @@
-# COEX Pix
+# Reality Works Pix
 
-The **COEX Pix** flight controller is a modified [Pixracer](https://docs.px4.io/master/en/flight_controller/pixracer.html) FCU. It is a part of the **Clover 4** quadrotor kit.
+The **Reality Works Pix** flight controller is a modified [Pixracer](https://docs.px4.io/master/en/flight_controller/pixracer.html) FCU. It is a part of the **droid 4** quadrotor kit.
 
-> **Hint** The source files of the COEX Pix flight controller are [published](https://github.com/CopterExpress/hardware/tree/master/COEX%20Pix) under the CC BY-NC-SA license.
+> **Hint** The source files of the Reality Works Pix flight controller are [published](https://github.com/CopterExpress/hardware/tree/master/Reality Works%20Pix) under the CC BY-NC-SA license.
 
 ## Revision 1.1
 
@@ -29,7 +29,7 @@ The **COEX Pix** flight controller is a modified [Pixracer](https://docs.px4.io/
 * *TELEM 2* (JST-GH 4 pin) – telemetry port 2, UART.
 * *GPS* (JST-GH 6 pin) – GNSS (UART) and external compass (I2C) port.
 * *I2C* (JST-GH 4 pin) – I2C port for supported devices (shares lanes with *GPS* port).
-* *PWR* (JST-GH 6 pin) – port for PDB connection (COEX PDB or compatible), with two power lanes, two ground lanes, and voltage and current sensor inputs.
+* *PWR* (JST-GH 6 pin) – port for PDB connection (Reality Works PDB or compatible), with two power lanes, two ground lanes, and voltage and current sensor inputs.
 * *RC IN* (JST-GH 4 pin) – RC input port with RSSI pin. Supports PPM and S.BUS protocols.
 * Micro USB port for PC connection (USB 2.0/1.1).
 * MicroSD slot (supports up to 32gb microSD cards).
@@ -37,15 +37,15 @@ The **COEX Pix** flight controller is a modified [Pixracer](https://docs.px4.io/
 
 ### Port pinouts
 
-<img src="../assets/coex_pix/coexpix-top.jpg" width="400" class="zoom">
+<img src="../assets/Reality Works_pix/Reality Workspix-top.jpg" width="400" class="zoom">
 
-<img src="../assets/coex_pix/coexpix-bottom.jpg" width="400" class="zoom">
+<img src="../assets/Reality Works_pix/Reality Workspix-bottom.jpg" width="400" class="zoom">
 
 > **Note** On rev. 1.0 boards *RC IN* port and microSD slot are switched. Pinout for the *RC IN* port is the same on these boards.
 
 ### Mounting suggestions
 
-**Important**: The board is meant to be installed with a non-standard orientation (roll 180º, yaw 90º) on the Clover airframe. Therefore, the `SENS_BOARD_ROT` PX4 parameter should be set to `ROLL 180, YAW 90`.
+**Important**: The board is meant to be installed with a non-standard orientation (roll 180º, yaw 90º) on the droid airframe. Therefore, the `SENS_BOARD_ROT` PX4 parameter should be set to `ROLL 180, YAW 90`.
 
 ### Usage notes
 
@@ -72,6 +72,6 @@ The board utilizes low-noise DC-DC converters, voltage inputs have LC and ferrit
 
 ### Port pinouts
 
-<img src="../assets/coex_pix/coexpix-top-rev1.2.png" width=400 class=zoom>
+<img src="../assets/Reality Works_pix/Reality Workspix-top-rev1.2.png" width=400 class=zoom>
 
-<img src="../assets/coex_pix/coexpix-bottom-rev1.2.png" width=400 class=zoom>
+<img src="../assets/Reality Works_pix/Reality Workspix-bottom-rev1.2.png" width=400 class=zoom>

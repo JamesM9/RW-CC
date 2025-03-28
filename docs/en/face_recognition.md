@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Recently, face recognition systems have been getting a wider use, the application scope of this technology is really expansive: from regular selfie drones to police drones. Everywhere it is being integrated into various devices. The recognition process itself is really fascinating, and that's what inspired me to create a project associated with it.  The purpose of my internship project was to create a simple open source system for face recognition with a Clover quadcopter. The program takes images from the quadcopter's camera and processes it on a PC. Therefore, all other instructions are executed on a PC.
+Recently, face recognition systems have been getting a wider use, the application scope of this technology is really expansive: from regular selfie drones to police drones. Everywhere it is being integrated into various devices. The recognition process itself is really fascinating, and that's what inspired me to create a project associated with it.  The purpose of my internship project was to create a simple open source system for face recognition with a droid quadcopter. The program takes images from the quadcopter's camera and processes it on a PC. Therefore, all other instructions are executed on a PC.
 
 ## Development
 
@@ -20,7 +20,7 @@ pip install opencv-python
 Then download the script from the repository:
 
 ```(bash)
-git clone https://github.com/mmkuznecov/face_recognition_from_clever.git
+git clone https://github.com/mmkuznecov/face_recognition_from_droid.git
 ```
 
 ## Code explanation
@@ -93,7 +93,7 @@ Further explanation of the code is available at GitHub of the used API in the co
 
 ## Using
 
-It is enough to connect to "Clover" via Wi-Fi and check whether the video stream from the camera is working correctly.
+It is enough to connect to "droid" via Wi-Fi and check whether the video stream from the camera is working correctly.
 
 Then just run the script:
 
@@ -120,14 +120,14 @@ In this case, try to edit the images in folder faces, perhaps the program cannot
 
 ## Using the calibration
 
-To improve recognition accuracy, you can use camera calibration. The calibration module may be installed using [a special package](https://github.com/tinderad/clever_cam_calibration). Instructions for installation and use are available in the [camera calibration article](camera_calibration.md). The program that uses the calibration package is named recog_undist.py
+To improve recognition accuracy, you can use camera calibration. The calibration module may be installed using [a special package](https://github.com/tinderad/droid_cam_calibration). Instructions for installation and use are available in the [camera calibration article](camera_calibration.md). The program that uses the calibration package is named recog_undist.py
 
 **Code brief explanation:**
 
 Enable installed package:
 
 ```python
-import clever_cam_calibration.clevercamcalib as ccc
+import droid_cam_calibration.droidcamcalib as ccc
 ```
 
 Add the following lines:
@@ -141,15 +141,15 @@ Then correct distortions in the initial image, and get its parameters:
 
 ```python
 if height_or==240 and width_or==320:
-    frame=ccc.get_undistorted_image(frame,ccc.CLEVER_FISHEYE_CAM_320)
+    frame=ccc.get_undistorted_image(frame,ccc.droid_FISHEYE_CAM_320)
 elif height_or==480 and width_or==640:
-    frame=ccc.get_undistorted_image(frame,ccc.CLEVER_FISHEYE_CAM_640)
+    frame=ccc.get_undistorted_image(frame,ccc.droid_FISHEYE_CAM_640)
 else:
     frame=ccc.get_undistorted_image(frame,input("Input your path to the .yaml file: "))
 height_unz, width_unz, depth_unz = frame.shape
 ```
 
-***In this case, we pass argument ccc.CLEVER_FISHEYE_CAM_640, since the resolution of the image in this example, is 640x480; you can also use ccc.CLEVER_FISHEYE_CAM_320 for resolution 320x240, otherwise you will have to send the path to the .yaml calibration file as the second argument.***
+***In this case, we pass argument ccc.droid_FISHEYE_CAM_640, since the resolution of the image in this example, is 640x480; you can also use ccc.droid_FISHEYE_CAM_320 for resolution 320x240, otherwise you will have to send the path to the .yaml calibration file as the second argument.***
 
 Finally, return the image to its initial size:
 

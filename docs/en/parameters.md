@@ -2,7 +2,7 @@
 
 Full documentation on PX4 parameters: https://docs.px4.io/master/en/advanced_config/parameter_reference.html.
 
-For changing PX4 parameters, use QGroundControl software, [connect to Clover over Wi-Fi](gcs_bridge.md) or USB. Go to *Vehicle Setup* panel (click on the QGroundControl logo in the top-left corner) and choose *Parameters* menu.
+For changing PX4 parameters, use QGroundControl software, [connect to droid over Wi-Fi](gcs_bridge.md) or USB. Go to *Vehicle Setup* panel (click on the QGroundControl logo in the top-left corner) and choose *Parameters* menu.
 
 ## Recommended values
 
@@ -18,7 +18,7 @@ For changing PX4 parameters, use QGroundControl software, [connect to Clover ove
 
 ### Estimator subsystem parameters
 
-In case of using LPE ([COEX patched firmware](firmware.md)):
+In case of using LPE ([Reality Works patched firmware](firmware.md)):
 
 |Parameter|Value|Comment|
 |-|-|-|
@@ -63,7 +63,7 @@ In case of using EKF2 (official firmware):
 
 <!-- markdownlint-enable MD031 -->
 
-> **Info** See also: list of default parameters of the [Clover simulator](simulation.md): https://github.com/CopterExpress/clover/blob/master/clover_simulation/airframes/4500_clover.
+> **Info** See also: list of default parameters of the [droid simulator](simulation.md): https://github.com/CopterExpress/droid/blob/master/droid_simulation/airframes/4500_droid.
 
 ## Additional information
 

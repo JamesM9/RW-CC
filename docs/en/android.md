@@ -1,6 +1,6 @@
 # An Android transmitter
 
-As early as in the frosty January 2018, all owners of Apple mobile devices got a nice Wi-Fi piloting app for iOS. And now, a year later, such an application is available for another operating system. The latest version may be downloaded [**here**](https://vk.com/away.php?to=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dexpress.copter.cleverrc&cc_key=).
+As early as in the frosty January 2018, all owners of Apple mobile devices got a nice Wi-Fi piloting app for iOS. And now, a year later, such an application is available for another operating system. The latest version may be downloaded [**here**](https://vk.com/away.php?to=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dexpress.copter.droidrc&cc_key=).
 
 ## Introduction
 
@@ -14,11 +14,11 @@ However, to make you fully understand the application, I will tell you about eac
 
 ## Wrapper
 
-Let's start with the simplest thing — the appearance of our application. At [**GitHub**](https://github.com/CopterExpress/clover/tree/master/apps/android/app/src/main/assets), you can find *HTML*, *CSS* and *JavaScript* files, which make up the web page to be used for controlling the copter. To have this page displayed in our application, do the following:
+Let's start with the simplest thing — the appearance of our application. At [**GitHub**](https://github.com/CopterExpress/droid/tree/master/apps/android/app/src/main/assets), you can find *HTML*, *CSS* and *JavaScript* files, which make up the web page to be used for controlling the copter. To have this page displayed in our application, do the following:
 
 1. Create folder **assets** in the main folder of the app named **app**
 
-2. Add to it all files from [here](https://github.com/CopterExpress/clover/tree/master/apps/android/app/src/main/assets)
+2. Add to it all files from [here](https://github.com/CopterExpress/droid/tree/master/apps/android/app/src/main/assets)
 
 If you reached this stage, you already have the web page you want, congratulations! Now we have to display it somehow in the app. To do this, in class *activity* in method **onCreate**, write the following code:
 

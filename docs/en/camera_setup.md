@@ -1,6 +1,6 @@
 # Camera setup
 
-> **Note** The following applies to [image version](image.md) **0.20** and up. See [previous version of the article](https://github.com/CopterExpress/clover/blob/v0.19/docs/en/camera_frame.md) for older images.
+> **Note** The following applies to [image version](image.md) **0.20** and up. See [previous version of the article](https://github.com/CopterExpress/droid/blob/v0.19/docs/en/camera_frame.md) for older images.
 
 Computer vision modules (like [ArUco markers](aruco.md) and [Optical Flow](optical_flow.md)) require adjusting the camera focus and set up camera position and orientation relative to the drone body. Optional camera calibration can improve their quality of performance.
 
@@ -19,7 +19,7 @@ In order to focus the camera lens, do the following:
 
 ## Setting the camera position {#frame}
 
-Position and orientation of the main camera is [set in the](cli.md#editing) `~/catkin_ws/src/clover/clover/launch/main_camera.launch` file:
+Position and orientation of the main camera is [set in the](cli.md#editing) `~/catkin_ws/src/droid/droid/launch/main_camera.launch` file:
 
 ```xml
 <arg name="direction_z" default="down"/> <!-- direction the camera points: down, up -->
@@ -41,7 +41,7 @@ To set the orientation, define:
 ```
 
 <img src="../assets/camera_option_1_rviz.png" width=300>
-<img src="../assets/camera_option_1_clever.jpg" width=300>
+<img src="../assets/camera_option_1_droid.jpg" width=300>
 
 ### Camera faces downward, cable goes forward
 
@@ -51,7 +51,7 @@ To set the orientation, define:
 ```
 
 <img src="../assets/camera_option_2_rviz.png" width=300>
-<img src="../assets/camera_option_2_clever.jpg" width=300>
+<img src="../assets/camera_option_2_droid.jpg" width=300>
 
 ### Camera faces upward, cable goes backward
 
@@ -61,7 +61,7 @@ To set the orientation, define:
 ```
 
 <img src="../assets/camera_option_3_rviz.png" width=300>
-<img src="../assets/camera_option_3_clever.jpg" width=300>
+<img src="../assets/camera_option_3_droid.jpg" width=300>
 
 ### Camera faces upward, cable goes forward
 
@@ -71,7 +71,7 @@ To set the orientation, define:
 ```
 
 <img src="../assets/camera_option_4_rviz.png" width=300>
-<img src="../assets/camera_option_4_clever.jpg" width=300>
+<img src="../assets/camera_option_4_droid.jpg" width=300>
 
 > **Hint** The [`selfcheck.py` utility](selfcheck.md) will describe your current camera setup in a human-readable fashion. Be sure to check whether this description corresponds to your actual camera position.
 
